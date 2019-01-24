@@ -21,7 +21,7 @@ namespace Advanced_Lesson_2_Inheritance
 			Console.WriteLine("1 - Console");
 			Console.WriteLine("2 - File");
 			Console.WriteLine("3 - Image");
-			Console.Write(" >> ");
+			Console.Write(">> ");
 			var type = Console.ReadLine();
 			IPrinter printer = null;
 
@@ -53,7 +53,7 @@ namespace Advanced_Lesson_2_Inheritance
 			Console.WriteLine("Write text");
 			for (int i = 0; i < 1; i++)
 			{
-				Console.Write(" >> ");
+				Console.Write(">> ");
 				printer.Print(Console.ReadLine());
 				//printer.Print();
 			}
