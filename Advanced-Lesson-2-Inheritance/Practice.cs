@@ -50,9 +50,10 @@ namespace Advanced_Lesson_2_Inheritance
 					}
 
 			}
-			Console.WriteLine("Write text >> ");
+			Console.WriteLine("Write text");
 			for (int i = 0; i < 1; i++)
 			{
+				Console.Write(" >> ");
 				printer.Print(Console.ReadLine());
 				//printer.Print();
 			}
@@ -119,21 +120,20 @@ namespace Advanced_Lesson_2_Inheritance
 			public string FileName { get; }
 			public void Print(string str)
 			{
-				
-				Bitmap bitmap = new Bitmap(300, 300);
+				Bitmap bitmap = new Bitmap(500, 300);
 				Font drawFont = new Font("Arial", 16);
 				SolidBrush drawBrush = new SolidBrush(Color.Black);
-				float x = 150.0F;
-				float y = 50.0F;
+				float x = 10.0F;
+				float y = 10.0F;
 				StringFormat drawFormat = new StringFormat();
-				drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
+				drawFormat.FormatFlags = StringFormatFlags.DisplayFormatControl;
 				Graphics graphics = Graphics.FromImage(bitmap);
 				graphics.DrawString(str, drawFont, drawBrush, x, y, drawFormat);
 				bitmap.Save($@"D:\{FileName}.png");
 			}
 			public BitmapPrinter(string fileName)
 			{
-
+				FileName = fileName;
 			}
 		}
 
